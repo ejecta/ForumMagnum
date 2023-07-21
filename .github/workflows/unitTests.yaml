@@ -7,21 +7,21 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.x]
+        node-version: 18
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
+    - name: Use Node.js 
+      uses: actions/setup-node@v3
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: 18
 
     - name: yarn install
       run: yarn install
 
-    - name: yarn run lint
-      run: yarn run lint
+    - name: run lint
+      run: yarn run eslint
 
     - name: yarn run test-ci
       run: yarn run test-ci
