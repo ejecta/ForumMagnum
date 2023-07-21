@@ -4,10 +4,7 @@ on: [push, pull_request]
 jobs:
   buildAndTest:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: 18
+    
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
