@@ -73,10 +73,3 @@ jobs:
 
       - name: Install JS Dependencies
         run: yarn --prefer-offline
-
-      - name: Install Bench Site and Apps
-        env:
-          MYSQL_HOST: 'localhost'
-          MYSQL_PWD: 'admin'
-        run: |
-          bash ${{ github.workspace }}/.github/helper/install.sh
